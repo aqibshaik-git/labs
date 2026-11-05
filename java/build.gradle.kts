@@ -11,3 +11,9 @@ dependencies {
 }
 
 tasks.test { useJUnitPlatform() }
+
+// Thu 12 Nov: ./gradlew lostUpdate   (runs the broken UnsafeAccounts and prints the damage)
+tasks.register<JavaExec>("lostUpdate") {
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("dev.aqib.labs.concurrency.UnsafeAccounts")
+}
